@@ -1,0 +1,5 @@
+venv
+FARM 
+*.pyc 
+.env 
+.DS_Store
