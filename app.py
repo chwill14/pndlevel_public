@@ -31,6 +31,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import pandas as pd
 import dash_bootstrap_components as dbc
+import datetime
 
 # %% [markdown]
 # When running in JupyterHub or Binder, call the `infer_jupyter_config` function to detect the proxy configuration.
@@ -116,7 +117,28 @@ def display_(radio_value):
     fig.update_xaxes(showline=True, linewidth=2, linecolor='black', mirror=True)
     fig.update_yaxes(showline=True, linewidth=2, linecolor='black', mirror=True)
 
-    return fig
+    #set range slider and selector buttons for x-axis
+    fig.update_xaxes(
+    rangeslider_visible=False,
+    rangeselector=dict(
+        buttons=list([
+            dict(count=1, label="1m", step="month", stepmode="backward"),
+            dict(count=6, label="6m", step="month", stepmode="backward"),
+            dict(count=1, label="YTD", step="year", stepmode="todate"),
+            dict(count=1, label="1y", step="year", stepmode="backward"),
+            dict(step="all")
+        ])
+    )
+)
+
+    #set default graph layout as showing only the past month
+    now = datetime.date.today()
+    then = now - datetime.timedelta(days=30)
+    fig.update_layout(xaxis_range=[then, now])
+
+
+    #return fig
+    fig.write_html("index.html")
 
 
 
