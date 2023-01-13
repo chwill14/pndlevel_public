@@ -61,7 +61,8 @@ app.layout = html.Div([
     html.Img(src='/assets/Background.png', style={'width':'60%'}),
     dbc.Jumbotron([
     html.H1("Farm Pond Levels", className="display-3"),
-    html.P("Select a region of the graph to zoom in.", className="lead"),
+    html.P("Hover mouse on line to see values.", className="lead"),
+    html.P("Click tabs to change dates shown.", className="lead"),
     html.P("Double click anywhere in the graph to reset zoom.", className="lead"),
     ], fluid=True,)],
     fluid=True,
@@ -137,8 +138,8 @@ def display_(radio_value):
     fig.update_layout(xaxis_range=[then, now])
 
 
-    #return fig
-    fig.write_html("index.html")
+    return fig
+    #fig.write_html("index.html")
 
 
 
