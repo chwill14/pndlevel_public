@@ -138,8 +138,8 @@ def display_(radio_value):
     fig.update_layout(xaxis_range=[then, now])
 
 
-    return fig
-    #fig.write_html("index.html")
+    #return fig
+    fig.write_html("index.html")
 
 
 
