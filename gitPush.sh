@@ -9,5 +9,5 @@ sleep 1
 git commit -m "daily levels update"
 sleep 5
 
-git push heroku main
+git push
 exit 0
