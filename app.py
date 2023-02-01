@@ -139,7 +139,7 @@ def display_(radio_value):
 
 
     #return fig
-    fig.write_html("index.html")
+    fig.write_html("graph.html")
 
 
 
