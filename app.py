@@ -34,6 +34,9 @@ import dash_bootstrap_components as dbc
 import datetime
 import webbrowser
 
+url = 'http://127.0.0.1:8050'
+webbrowser.open_new(url)
+
 # %% [markdown]
 # When running in JupyterHub or Binder, call the `infer_jupyter_config` function to detect the proxy configuration.
 
@@ -140,7 +143,7 @@ def display_(radio_value):
 
 
     #return fig
-    fig.write_html("index.html")
+    fig.write_html("graph.html")
 
 
 
@@ -152,8 +155,7 @@ def display_(radio_value):
 # %%
 if __name__ == "__main__":
     app.run_server(debug=True)
-    url = 'http://127.0.0.1:8050/'
-    webbrowser.open_new(url)
+    
 
 # %% [markdown]
 # By default, `run_server` displays a URL that you can click on to open the app in a browser tab. The `mode` argument to `run_server` can be used to change this behavior.  Setting `mode="inline"` will display the app directly in the notebook output cell.
